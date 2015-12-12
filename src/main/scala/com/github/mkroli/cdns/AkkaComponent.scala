@@ -16,6 +16,7 @@
 package com.github.mkroli.cdns
 
 import scala.concurrent.duration.DurationInt
+import scala.language.postfixOps
 
 import akka.actor.ActorSystem
 import akka.util.Timeout

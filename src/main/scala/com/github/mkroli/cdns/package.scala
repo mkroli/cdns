@@ -19,6 +19,8 @@ import scala.Vector
 import scala.annotation.tailrec
 import scala.concurrent.ExecutionContextExecutor
 import scala.concurrent.Promise
+import scala.language.implicitConversions
+import scala.language.postfixOps
 import scala.math.random
 
 import com.google.common.util.concurrent.ListenableFuture
