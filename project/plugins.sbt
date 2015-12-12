@@ -13,4 +13,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.5.1")
+addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.7.7")

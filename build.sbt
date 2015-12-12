@@ -19,17 +19,19 @@ organization := "com.github.mkroli"
 
 version := "0.1-SNAPSHOT"
 
-scalaVersion := "2.11.0"
+scalaVersion := "2.11.7"
+
+scalacOptions ++= Seq("-feature", "-unchecked", "-deprecation")
 
 resolvers += "bintray" at "http://jcenter.bintray.com"
 
 libraryDependencies ++= Seq(
-  "ch.qos.logback" % "logback-classic" % "1.1.2",
-  "com.typesafe.akka" %% "akka-actor" % "2.3.2",
-  "com.github.mkroli" %% "dns4s-akka" % "0.4",
-  "com.datastax.cassandra" % "cassandra-driver-core" % "2.0.1",
-  "org.xerial.snappy" % "snappy-java" % "1.1.0.1",
-  "net.jpountz.lz4" % "lz4" % "1.2.0"
+  "ch.qos.logback" % "logback-classic" % "1.1.3",
+  "com.typesafe.akka" %% "akka-actor" % "2.4.1",
+  "com.github.mkroli" %% "dns4s-akka" % "0.9",
+  "com.datastax.cassandra" % "cassandra-driver-core" % "2.1.9",
+  "org.xerial.snappy" % "snappy-java" % "1.1.2",
+  "net.jpountz.lz4" % "lz4" % "1.3"
 )
 
 packSettings
@@ -37,3 +39,7 @@ packSettings
 packMain := Map("cdns" -> "com.github.mkroli.cdns.Boot")
 
 packJvmOpts := Map("cdns" -> Seq("-Dlogback.configurationFile=${PROG_HOME}/etc/logback.xml"))
+
+packGenerateWindowsBatFile := false
+
+packArchiveExcludes ++= Seq("Makefile", "VERSION")
