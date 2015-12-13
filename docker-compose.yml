@@ -1,0 +1,9 @@
+cassandra:
+  image: cassandra
+
+cdns:
+  build: .
+  links:
+    - cassandra
+  ports:
+    - 53:53/udp

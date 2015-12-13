@@ -34,17 +34,22 @@ UPDATE cdns.cdns SET
     AND type = 'A';
 ```
 
-Docker
-------
+Installation
+------------
+### Docker Compose
+```
+docker-compose up -d
+```
 
+### Docker
 Cassandra
 ```
-docker run -d --name cassandra poklet/cassandra
+docker run -d --name cassandra cassandra
 ```
 
 cqlsh
 ```
-docker run --rm -i -t --link cassandra:cassandra poklet/cassandra /bin/sh -c 'cqlsh ${CASSANDRA_PORT_9160_TCP_ADDR}'
+docker exec -it cassandra cqlsh
 ```
 
 cdns
